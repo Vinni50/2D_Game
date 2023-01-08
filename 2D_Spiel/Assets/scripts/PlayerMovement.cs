@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using static PlayerMovement;
 
@@ -10,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float MovementSpeed = 1.0f;
     public float JumpHigh = 1.0f;
     public float jumpTakeOffSpeed = 7;
+    private Vector3 respawnPoint;
 
     public Camera playerCamera;
     public Animator animator;
@@ -29,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         Rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         m = GameObject.FindGameObjectWithTag("Text").GetComponent<CoinCounter>();
+        respawnPoint = transform.position;
 
     }
 
@@ -63,15 +66,36 @@ public class PlayerMovement : MonoBehaviour
             spriteRenderer.flipX = true;
 
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Coin")
+     private void OnTriggerEnter2D(Collider2D other)
         {
-            m.Addmoney();
-            Destroy(other.gameObject);
+            if (other.gameObject.tag == "Coin")
+            {
+                m.Addmoney();
+                Destroy(other.gameObject);
+            }
+
+            if (other.tag == "Checkpoint")
+            {
+                respawnPoint = transform.position;
+            }
+
+            if (other.tag == "Zone_Restart")
+            {
+                transform.position = respawnPoint ;
+            }
+     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+        if (collision.gameObject.tag == "Enemy")
+        {
+            transform.position = respawnPoint;
         }
     }
+   
+
+
 
 
 

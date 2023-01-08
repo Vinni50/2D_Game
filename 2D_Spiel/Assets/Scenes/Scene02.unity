@@ -2548,26 +2548,13 @@ GameObject:
   m_Component:
   - component: {fileID: 718791907}
   - component: {fileID: 718791906}
-  - component: {fileID: 718791905}
   m_Layer: 0
   m_Name: Zone_Restart
-  m_TagString: Untagged
+  m_TagString: Zone_Restart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &718791905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 718791904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86b649df89e0605499550a9be5491cb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &718791906
 BoxCollider2D:
   m_ObjectHideFlags: 0
