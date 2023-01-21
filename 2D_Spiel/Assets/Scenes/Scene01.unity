@@ -14701,9 +14701,6 @@ GameObject:
   - component: {fileID: 1471151518}
   - component: {fileID: 1471151522}
   - component: {fileID: 1471151523}
-  - component: {fileID: 1471151524}
-  - component: {fileID: 1471151525}
-  - component: {fileID: 1471151526}
   - component: {fileID: 1471151527}
   m_Layer: 0
   m_Name: Player_Ninja
@@ -14793,7 +14790,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471151517}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.28, y: -3.68, z: 0}
+  m_LocalPosition: {x: -20, y: -4, z: 0}
   m_LocalScale: {x: 1.3306625, y: 1.3306625, z: 1.3306625}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14839,54 +14836,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!58 &1471151524
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1471151517}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.31617907}
-  serializedVersion: 2
-  m_Radius: 0.3
---- !u!58 &1471151525
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1471151517}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.2990218}
-  serializedVersion: 2
-  m_Radius: 0.3
---- !u!58 &1471151526
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1471151517}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.3
 --- !u!61 &1471151527
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14900,7 +14849,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.007207513, y: -0.002052635}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -14911,7 +14860,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5463052, y: 1.1866298}
+  m_Size: {x: 0.55, y: 1.2}
   m_EdgeRadius: 0
 --- !u!1 &1484011122
 GameObject:
