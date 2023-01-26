@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 53499776}
   - component: {fileID: 53499775}
   - component: {fileID: 53499777}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -326,6 +326,7 @@ MonoBehaviour:
   speed: 3
   rechts: 5
   links: 5
+  health: 50
 --- !u!61 &53499776
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14176,6 +14177,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1138288374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1138288375}
+  m_Layer: 0
+  m_Name: attackPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1138288375
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138288374}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.58, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1471151521}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1146459317
 GameObject:
   m_ObjectHideFlags: 0
@@ -15105,6 +15137,7 @@ GameObject:
   - component: {fileID: 1471151522}
   - component: {fileID: 1471151523}
   - component: {fileID: 1471151527}
+  - component: {fileID: 1471151528}
   m_Layer: 0
   m_Name: Player_Ninja
   m_TagString: Player
@@ -15196,7 +15229,8 @@ Transform:
   m_LocalPosition: {x: -20, y: -4, z: 0}
   m_LocalScale: {x: 1.3306625, y: 1.3306625, z: 1.3306625}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1138288375}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15265,6 +15299,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.55, y: 1.2}
   m_EdgeRadius: 0
+--- !u!114 &1471151528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471151517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db2741b6f0ba2b541909177b1501899a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackPos: {fileID: 1138288375}
+  enemies:
+    serializedVersion: 2
+    m_Bits: 64
+  attackrange: 0.76
+  damage: 50
 --- !u!1 &1484011122
 GameObject:
   m_ObjectHideFlags: 0

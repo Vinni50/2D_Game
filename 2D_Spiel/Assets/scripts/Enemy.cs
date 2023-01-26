@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     public float speed = 3f;
     public float rechts;
     public float links;
+    public int health = 50;
 
     private Vector3 rotation;
 
@@ -32,6 +33,11 @@ public class Enemy : MonoBehaviour
         if(transform.position.x > rechts)
         {
             transform.eulerAngles = rotation;
+        }
+
+        if(health <= 0)
+        {
+            Destroy(gameObject);
         }
         
 
