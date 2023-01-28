@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Checkpoint
   - Zone_Restart
+  - Ende
   layers:
   - Default
   - TransparentFX

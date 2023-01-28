@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     private CoinCounter m;
 
+    public GameObject panel;
 
     SpriteRenderer spriteRenderer;
     Rigidbody2D Rb;
@@ -83,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 transform.position = respawnPoint ;
             }
+
      }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -92,6 +94,13 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position = respawnPoint;
         }
+
+        if (collision.gameObject.tag == "Ende")
+            {
+                panel.SetActive(true);
+                Destroy(gameObject);
+            }
+
     }
    
 

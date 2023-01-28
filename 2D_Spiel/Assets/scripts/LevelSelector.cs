@@ -4,22 +4,36 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LevelSelector : MonoBehaviour
-{
+public class LevelSelector : MonoBehaviour {
 
-    public string sceneToLoad;
+	public string sceneToLoad;
 
+	// Use this for initialization
+	void Start () {
+		// Level 01 auf aktiv schalten
+		PlayerPrefs.SetInt("scene00", 1);
 
+		if (PlayerPrefs.GetInt (sceneToLoad.ToString ()) == 1)
+		{
+			// Level aktiv => Button aktivieren
+			this.GetComponent<Button>().interactable = true;
+		}
+		else
+		{
+			// Level inaktiv => Button deaktivieren
+			this.GetComponent<Button>().interactable = false;
+		}
 
-    // Update is called once per frame
-    void Update()
-    {
+	}
 
-    }
+	// Update is called once per frame
+	void Update () {
+
+	}
 
     public void LoadLevel()
-    {
-        // ausgew‰hltes Level laden
-        SceneManager.LoadScene(sceneToLoad);
-    }
+	{
+		// ausgew√§hltes Level laden
+		SceneManager.LoadScene(sceneToLoad);
+	}
 }
