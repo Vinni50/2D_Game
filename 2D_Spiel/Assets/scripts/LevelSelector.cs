@@ -12,8 +12,9 @@ public class LevelSelector : MonoBehaviour {
 	void Start () {
 		// Level 01 auf aktiv schalten
 		PlayerPrefs.SetInt("scene00", 1);
+		Debug.Log(PlayerPrefs.GetInt(sceneToLoad.ToString()));
 
-		if (PlayerPrefs.GetInt (sceneToLoad.ToString ()) == 1)
+		if (PlayerPrefs.GetInt(sceneToLoad.ToString()) == 0)
 		{
 			// Level aktiv => Button aktivieren
 			this.GetComponent<Button>().interactable = true;

@@ -23,7 +23,8 @@ public class nextlevel : MonoBehaviour {
 		if (PlayerPrefs.GetInt (sceneToLoad.ToString ()) == 0) {
 			// level noch nicht aktiv -> freischalten
 			PlayerPrefs.SetInt (sceneToLoad.ToString (), 1);
-			Debug.Log (" PlayerPrefs " + PlayerPrefs.GetInt (sceneToLoad.ToString ()));
+			Debug.Log(PlayerPrefs.GetInt(sceneToLoad.ToString()));
+			Debug.Log ("Level freigeschaltet? " + PlayerPrefs.GetInt (sceneToLoad.ToString ()));
 		}
 
 	}

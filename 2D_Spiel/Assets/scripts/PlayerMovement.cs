@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using static PlayerMovement;
+using static Attack;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -19,8 +20,11 @@ public class PlayerMovement : MonoBehaviour
     public Collider2D collider2d;
 
     private CoinCounter m;
-
+    public GameObject ESCpanel;
     public GameObject panel;
+
+    public bool jump;
+    float esc;
 
     SpriteRenderer spriteRenderer;
     Rigidbody2D Rb;
@@ -28,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        esc = 1;
         Rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         m = GameObject.FindGameObjectWithTag("Text").GetComponent<CoinCounter>();
@@ -39,13 +43,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         Vector2 move;
-
-
-
-
-
+        
+        
         // Left/Right Movement
         move.x = Input.GetAxis("Horizontal");
         transform.position += new Vector3(move.x, 0, 0) * Time.deltaTime * MovementSpeed;
@@ -57,14 +57,38 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButton("Jump") && Mathf.Abs(Rb.velocity.y) < 0.0001f)
         {
             Rb.AddForce(new Vector2(0, JumpHigh), ForceMode2D.Impulse);
-
+            jump = true;
         }
-
 
         if (move.x > 0.01f)
             spriteRenderer.flipX = false;
         else if (move.x < -0.01f)
             spriteRenderer.flipX = true;
+
+        
+
+
+        if (Input.GetKeyDown("t"))
+        {
+            
+            esc = esc + 1;
+
+            ESCpanel.SetActive(true);
+            if (esc % 2 == 0 )
+            {
+                ESCpanel.SetActive(true);
+                Debug.Log (esc%2);
+            }
+            
+            else 
+            {
+                ESCpanel.SetActive(false);
+            }
+
+
+
+    }
+
 
     }
      private void OnTriggerEnter2D(Collider2D other)
@@ -90,7 +114,12 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy" && jump == false)
+        {
+            transform.position = respawnPoint;
+        }
+
+        else if (collision.gameObject.tag == "Enemy")
         {
             transform.position = respawnPoint;
         }
@@ -101,11 +130,11 @@ public class PlayerMovement : MonoBehaviour
                 Destroy(gameObject);
             }
 
+        if (collision.gameObject.tag == "Ground")
+        {
+            jump = false;
+        }
+
     }
    
-
-
-
-
-
 }

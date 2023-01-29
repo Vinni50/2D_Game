@@ -11,13 +11,19 @@ public class CoinCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if (money == null)
+        {
+            
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        money.text = geld.ToString();
+        if (money != null)
+        {
+            money.text = geld.ToString();
+        }
     }
 
     public void Addmoney()
