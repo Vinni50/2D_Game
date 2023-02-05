@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using static PlayerMovement;
 
 public class Attack : MonoBehaviour
 {
+    
     public Transform attackPos;
     public LayerMask enemies;
     public float attackrange;
@@ -20,10 +22,13 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
        if(Input.GetKeyDown("r"))
         {
+            
             anim.SetBool("IsAttacking", true);
             Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackrange, enemies);
+            Thread.Sleep(1000);
             for(int i = 0; i < enemiesToDamage.Length; i++)
             {
                 enemiesToDamage[i].GetComponent<Enemy>().health -= damage;
