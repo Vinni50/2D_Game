@@ -7,7 +7,7 @@ using static Attack;
 
 public class PlayerMovement : MonoBehaviour
 {
-
+    private Vector3 rotation;
     public CharacterController2D controller;
     public float MovementSpeed = 1.0f;
     public float JumpHigh = 1.0f;
@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         m = GameObject.FindGameObjectWithTag("Text").GetComponent<CoinCounter>();
         respawnPoint = transform.position;
+        rotation = transform.eulerAngles;
 
     }
 
@@ -60,12 +61,19 @@ public class PlayerMovement : MonoBehaviour
             jump = true;
         }
 
-        if (move.x > 0.01f)
-            spriteRenderer.flipX = false;
-        else if (move.x < -0.01f)
-            spriteRenderer.flipX = true;
+        if(move.x < -0.01f)
+        {
+            transform.eulerAngles = rotation - new Vector3(0, 180, 0);
+        }
 
-        
+        if(move.x > 0.01f)
+        {
+            transform.eulerAngles = rotation;
+        }
+
+
+
+
 
 
         if (Input.GetKeyDown("t"))

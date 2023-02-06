@@ -23,12 +23,12 @@ public class Attack : MonoBehaviour
     void Update()
     {
         
-       if(Input.GetKeyDown("r"))
+       if(Input.GetMouseButtonDown(0))
         {
             
             anim.SetBool("IsAttacking", true);
             Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackrange, enemies);
-            Thread.Sleep(1000);
+            Thread.Sleep(0);
             for(int i = 0; i < enemiesToDamage.Length; i++)
             {
                 enemiesToDamage[i].GetComponent<Enemy>().health -= damage;

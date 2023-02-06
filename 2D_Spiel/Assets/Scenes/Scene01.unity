@@ -19548,9 +19548,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1382166972318592633, guid: 7784b72511c3ab048975d63bc43bf01c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.65
+      objectReference: {fileID: 0}
     - target: {fileID: 1382166972516840723, guid: 7784b72511c3ab048975d63bc43bf01c, type: 3}
       propertyPath: m_Name
       value: Player_Ninja
+      objectReference: {fileID: 0}
+    - target: {fileID: 1382166972516840742, guid: 7784b72511c3ab048975d63bc43bf01c, type: 3}
+      propertyPath: attackrange
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1382166972516840748, guid: 7784b72511c3ab048975d63bc43bf01c, type: 3}
       propertyPath: ESCpanel
@@ -19560,6 +19568,14 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 2060675106}
+    - target: {fileID: 1382166972516840749, guid: 7784b72511c3ab048975d63bc43bf01c, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1382166972516840750, guid: 7784b72511c3ab048975d63bc43bf01c, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1382166972516840751, guid: 7784b72511c3ab048975d63bc43bf01c, type: 3}
       propertyPath: m_RootOrder
       value: 2
