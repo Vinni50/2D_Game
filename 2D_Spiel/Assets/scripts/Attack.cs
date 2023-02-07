@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 using static PlayerMovement;
 
@@ -28,7 +27,6 @@ public class Attack : MonoBehaviour
             
             anim.SetBool("IsAttacking", true);
             Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackrange, enemies);
-            Thread.Sleep(0);
             for(int i = 0; i < enemiesToDamage.Length; i++)
             {
                 enemiesToDamage[i].GetComponent<Enemy>().health -= damage;
