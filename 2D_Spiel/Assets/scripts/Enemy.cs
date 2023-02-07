@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-
+    public AudioClip ouch;
     public float speed = 3f;
     public float rechts;
     public float links;

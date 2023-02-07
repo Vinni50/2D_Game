@@ -7,6 +7,7 @@ using static Attack;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static bool GameIsPaused = false;
     private Vector3 rotation;
     public CharacterController2D controller;
     public float MovementSpeed = 1.0f;
@@ -55,6 +56,8 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(move.x));
 
         // Jumping
+        
+        
         if (Input.GetButton("Jump") && Mathf.Abs(Rb.velocity.y) < 0.0001f)
         {
             Rb.AddForce(new Vector2(0, JumpHigh), ForceMode2D.Impulse);
@@ -71,8 +74,25 @@ public class PlayerMovement : MonoBehaviour
             transform.eulerAngles = rotation;
         }
 
+        
+      
+            
+                if (Input.GetButton("Jump") && Mathf.Abs(Rb.velocity.y) < 0.0001f)
+                {
+                    Rb.AddForce(new Vector2(0, JumpHigh), ForceMode2D.Impulse);
+                    jump = true;
+                }
 
+                if(move.x < -0.01f)
+                {
+                    transform.eulerAngles = rotation - new Vector3(0, 180, 0);
+                }
 
+                if(move.x > 0.01f)
+                {
+                    transform.eulerAngles = rotation;
+                }
+            
 
 
 
@@ -85,12 +105,16 @@ public class PlayerMovement : MonoBehaviour
             if (esc % 2 == 0 )
             {
                 ESCpanel.SetActive(true);
+                Time.timeScale = 0f;
+                GameIsPaused = true;
                 Debug.Log (esc%2);
             }
             
             else 
             {
                 ESCpanel.SetActive(false);
+                Time.timeScale = 1f;
+                GameIsPaused = false;
             }
 
 

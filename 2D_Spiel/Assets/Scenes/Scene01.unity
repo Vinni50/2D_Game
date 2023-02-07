@@ -19634,6 +19634,10 @@ PrefabInstance:
       value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 2892499994463971636, guid: b96ff97121a813d469d2c077a9f46795, type: 3}
+      propertyPath: ouch
+      value: 
+      objectReference: {fileID: 8300000, guid: 3fe23e73ca1cb884eafc0c0587dc5e8b, type: 3}
+    - target: {fileID: 2892499994463971636, guid: b96ff97121a813d469d2c077a9f46795, type: 3}
       propertyPath: links
       value: 6
       objectReference: {fileID: 0}
