@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using static PlayerMovement;
+using Platformer.PlayerMovement;
 using static Attack;
 
-public class PlayerMovement : MonoBehaviour
+
+
+namespace Platformer.PlayerMovement
 {
-    public static bool GameIsPaused = false;
+    public class PlayerMovement : MonoBehaviour
+    {
+    public bool GameIsPaused = false;
     private Vector3 rotation;
     public CharacterController2D controller;
     public float MovementSpeed = 1.0f;
@@ -46,8 +50,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Vector2 move;
-        
-        
+    
+    
         // Left/Right Movement
         move.x = Input.GetAxis("Horizontal");
         transform.position += new Vector3(move.x, 0, 0) * Time.deltaTime * MovementSpeed;
@@ -56,8 +60,8 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(move.x));
 
         // Jumping
-        
-        
+    
+    
         if (Input.GetButton("Jump") && Mathf.Abs(Rb.velocity.y) < 0.0001f)
         {
             Rb.AddForce(new Vector2(0, JumpHigh), ForceMode2D.Impulse);
@@ -74,9 +78,9 @@ public class PlayerMovement : MonoBehaviour
             transform.eulerAngles = rotation;
         }
 
+    
+  
         
-      
-            
                 if (Input.GetButton("Jump") && Mathf.Abs(Rb.velocity.y) < 0.0001f)
                 {
                     Rb.AddForce(new Vector2(0, JumpHigh), ForceMode2D.Impulse);
@@ -92,13 +96,13 @@ public class PlayerMovement : MonoBehaviour
                 {
                     transform.eulerAngles = rotation;
                 }
-            
+        
 
 
 
         if (Input.GetKeyDown("t"))
         {
-            
+        
             esc = esc + 1;
 
             ESCpanel.SetActive(true);
@@ -109,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
                 GameIsPaused = true;
                 Debug.Log (esc%2);
             }
-            
+        
             else 
             {
                 ESCpanel.SetActive(false);
@@ -145,7 +149,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+    
         if (collision.gameObject.tag == "Enemy" && jump == false)
         {
             transform.position = respawnPoint;
@@ -168,5 +172,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
-   
+
+    }
 }
