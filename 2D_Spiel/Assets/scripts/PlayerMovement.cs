@@ -29,7 +29,7 @@ namespace Platformer.PlayerMovement
     public GameObject panel;
 
     public bool jump;
-    float esc;
+    //float esc;
 
     SpriteRenderer spriteRenderer;
     Rigidbody2D Rb;
@@ -37,7 +37,7 @@ namespace Platformer.PlayerMovement
     // Start is called before the first frame update
     void Start()
     {
-        esc = 1;
+        //esc = 1;
         Rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         m = GameObject.FindGameObjectWithTag("Text").GetComponent<CoinCounter>();
@@ -100,30 +100,28 @@ namespace Platformer.PlayerMovement
 
 
 
-        if (Input.GetKeyDown("t"))
-        {
+        //if (Input.GetKeyDown("t"))
+        //{
         
-            esc = esc + 1;
+        //    esc = esc + 1;
 
-            ESCpanel.SetActive(true);
-            if (esc % 2 == 0 )
-            {
-                ESCpanel.SetActive(true);
-                Time.timeScale = 0f;
-                GameIsPaused = true;
-                Debug.Log (esc%2);
-            }
-        
-            else 
-            {
-                ESCpanel.SetActive(false);
-                Time.timeScale = 1f;
-                GameIsPaused = false;
-            }
+        //    ESCpanel.SetActive(true);
+        //    if (esc % 2 == 0 )
+        //    {
+        //        ESCpanel.SetActive(true);
+        //        Time.timeScale = 0f;
+        //        GameIsPaused = true;
+        //        Debug.Log (esc%2);
+        //    }
+        //
+        //    else 
+        //    {
+        //        ESCpanel.SetActive(false);
+        //        Time.timeScale = 1f;
+        //        GameIsPaused = false;
+        //    }
 
-
-
-    }
+        //}
 
 
     }

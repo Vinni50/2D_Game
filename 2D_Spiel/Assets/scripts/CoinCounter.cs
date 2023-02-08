@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CoinCounter : MonoBehaviour
 {
     public int geld;
-    public Text money;
+    public TextMeshProUGUI money;
 
     // Start is called before the first frame update
     void Start()
     {
+        geld = PlayerPrefs.GetInt("Money",0);
+
         if (money == null)
         {
             
@@ -22,12 +25,13 @@ public class CoinCounter : MonoBehaviour
     {
         if (money != null)
         {
-            money.text = geld.ToString();
+            money.text = PlayerPrefs.GetInt("Money", 0).ToString();
         }
     }
 
     public void Addmoney()
     {
         geld++;
+        PlayerPrefs.SetInt("Money",geld);
     }
 }

@@ -13,5 +13,6 @@ public class StartOnClick : MonoBehaviour
     {
         //PlayerMovement.GameIsPaused = false;
         SceneManager.LoadScene(sceneName);
+        Time.timeScale = 1f;
     }
 }
